@@ -25,6 +25,6 @@ VOLUME ["/data"]
 VOLUME ["/conf"]
 
 EXPOSE 6800
-EXPOSE 80
+EXPOSE 6801
 
 CMD ["/conf-copy/start.sh"]
