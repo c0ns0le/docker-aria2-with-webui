@@ -15,9 +15,6 @@ fi
 touch /conf/aria2.session
 chown $PUID:$PGID /conf/aria2.session
 
-touch /logs.txt
-chown $PUID:$PGID /logs.txt
-
 darkhttpd /aria2-ng --port 6801 &
 
-exec s6-setuidgid $PUID:$PGID aria2c --conf-path=/conf/aria2.conf --log=/logs.txt
+exec s6-setuidgid $PUID:$PGID aria2c --conf-path=/conf/aria2.conf --log=- --console-log-level=error
